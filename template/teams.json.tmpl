@@ -1,0 +1,63 @@
+{
+  "type": "message",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "content": {
+        "type": "AdaptiveCard",
+        "body": [
+          {
+            "type": "ColumnSet",
+            "columns": [
+              {
+                "type": "Column",
+                "width": "auto",
+                "items": [
+                  {
+                    "type": "Image",
+                    "url": "{{.Image}}",
+                    "size": "Medium",
+                    "style": "Person"
+                  }
+                ]
+              },
+              {
+                "type": "Column",
+                "width": "stretch",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "size": "Medium",
+                    "weight": "Bolder",
+                    "text": "{{.Summary}}",
+                    "color": "Accent",
+                    "isSubtle": false,
+                    "wrap": true,
+                    "horizontalAlignment": "Center"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "{{.Description}}",
+                    "wrap": true,
+                    "horizontalAlignment": "Center",
+                    "fontType": "Default",
+                    "size": "Small",
+                    "weight": "Default",
+                    "color": "Default",
+                    "isSubtle": true
+                  }
+                ]
+              }
+            ]
+          },
+          {{.MRS}}
+        ],
+        "msteams": {
+          "width": "Full"
+        },
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.2"
+      }
+    }
+  ]
+}

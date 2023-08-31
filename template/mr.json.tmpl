@@ -1,0 +1,154 @@
+{
+  "type": "Container",
+  "items": [
+    {
+      "type": "TextBlock",
+      "text": "{{.Request.Title}}",
+      "wrap": true,
+      "horizontalAlignment": "Center",
+      "size": "Medium",
+      "weight": "Bolder",
+      "color": "Attention",
+      "isSubtle": false
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Author",
+              "wrap": true,
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {{if ne .ProjectName ""}}
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Project",
+              "wrap": true,
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {{end}}
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Created at",
+              "wrap": true,
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Updated at",
+              "wrap": true,
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "#",
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{{.Request.Author}}",
+              "wrap": true
+            }
+          ]
+        },
+        {{if ne .ProjectName ""}}
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{{.ProjectName}}",
+              "wrap": true
+            }
+          ]
+        },
+        {{end}}
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{{.Request.CreatedAt}}",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{{.Request.UpdatedAt}}",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.OpenUrl",
+                  "title": "Show MR",
+                  "url": "{{.Request.Link}}"
+                }
+              ],
+              "horizontalAlignment": "Center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "separator": true,
+  "verticalContentAlignment": "Center",
+  "horizontalAlignment": "Center",
+  "style": "emphasis",
+  "bleed": true
+}
